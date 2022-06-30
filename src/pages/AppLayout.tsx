@@ -7,9 +7,9 @@ export const AppLayout = () => {
                 <div className={'App-header'}>Something</div>
             </div>
             <div title={'content'} className={'app-layout'} style={{}}>
-                <div title={'leftNav'} className={'left-nav'}>Left Nav
+                <div title={'leftNav'} className={'left-nav'}>
                 </div>
-                <div title={'page view'} className={'page-view'}>
+                <div title={'pageView'} className={'page-view'}>
                     <Outlet></Outlet>
                 </div>
             </div>
