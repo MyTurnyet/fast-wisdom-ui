@@ -1,5 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
+import { storySlice } from './slices/StorySlice';
 
 export const appReducer = combineReducers({
-    // setup: setupSlice.reducer,
+    stories: storySlice.reducer
 });
