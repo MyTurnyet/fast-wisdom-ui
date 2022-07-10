@@ -6,6 +6,6 @@ export interface StoryLinkParams {
 
 export const StoryLink = (props: StoryLinkParams) => {
     return (<div>
-        <div>{props.story.storyId}</div>
+        <div>{props.story.title}</div>
     </div>);
 }

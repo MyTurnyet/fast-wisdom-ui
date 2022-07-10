@@ -6,7 +6,7 @@ import { testStoryNumber1 } from '../../configuration/fixtures/StoryFixtureData'
 
 describe('StoryLink', () => {
     it('should render', () => {
-        const renderApi = render(<StoryLink story={testStoryNumber1}></StoryLink>)
-        hasExpectedElementsByText(renderApi, 'testId1');
+        const view = render(<StoryLink story={testStoryNumber1}></StoryLink>)
+        hasExpectedElementsByText(view, testStoryNumber1.title,);
     });
 });

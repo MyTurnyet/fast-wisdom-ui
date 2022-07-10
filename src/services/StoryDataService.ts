@@ -1,7 +1,8 @@
 export interface StoryInformation {
     storyId: string;
-    numberOfVotes:number;
-    voteAverage:number;
+    title: string;
+    numberOfVotes: number;
+    voteAverage: number;
 }
 export interface DataService {
     getAllStories():Promise<StoryInformation[]>;

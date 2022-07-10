@@ -3,7 +3,7 @@ import { fireEvent, render, RenderResult } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { mockInitialStore } from './Store';
+import { FakeStore, mockInitialStore } from './Store';
 
 export function pressButtonWithText(
     screen: RenderResult,
@@ -45,9 +45,9 @@ export function hasExpectedElementsByText(
 export const mockHistory = createMemoryHistory();
 mockHistory.push = jest.fn();
 
-export function renderWithRouterAndStore(element: JSX.Element): RenderResult {
+export function renderWithRouterAndStore(element: JSX.Element, initialStore: FakeStore = mockInitialStore): RenderResult {
     return render(
-        <Provider store={mockInitialStore}>
+        <Provider store={initialStore}>
             <Router location={mockHistory.location} navigator={mockHistory}>
                 {element}
             </Router>
