@@ -4,6 +4,6 @@ describe('StoryDataService', () => {
     it('should do something', async () => {
         const dataService = new StoryDataService();
         const informationArray = await dataService.getAllStories();
-        expect(informationArray).toHaveLength(0);
+        expect(informationArray).toHaveLength(2);
     });
 });

@@ -8,7 +8,7 @@ export interface StoryState {
 
 let initialState: StoryState = {allStories: []};
 export const storySlice = createSlice({
-    name: 'Story',
+    name: 'stories',
     initialState,
     reducers: {},
     extraReducers: builder => {
