@@ -17,7 +17,7 @@ describe('StoryLink', () => {
     });
     it('navigates to clicked story', () => {
         const view = renderWithRouterAndStore(<StoryLink story={testStoryNumber1}></StoryLink>, mockStoreWithOneStory);
-        pressButtonWithTitle(view, `storyLink${testStoryNumber1.storyId}`);
+        pressButtonWithTitle(view, testStoryNumber1.title);
         expectHistoryCalledWith(`/story/${testStoryNumber1.storyId}`);
     });
 });
