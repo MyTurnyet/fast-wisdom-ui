@@ -3,6 +3,7 @@ import { testStoryInformationArray } from '../configuration/fixtures/StoryFixtur
 export interface StoryInformation {
     storyId: string;
     title: string;
+    description: string;
     numberOfVotes: number;
     voteAverage: number;
 }
