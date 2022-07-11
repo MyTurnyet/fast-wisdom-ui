@@ -42,7 +42,7 @@ export function hasExpectedElementsByText(
     elements.forEach((element) => renderResult.getByText(element));
 }
 
-const mockHistory = createMemoryHistory();
+export const mockHistory = createMemoryHistory();
 mockHistory.push = jest.fn();
 
 export function expectHistoryCalledWith(pathname: string) {
@@ -56,8 +56,8 @@ export function expectHistoryCalledWith(pathname: string) {
     );
 }
 
-function getRouter(element: JSX.Element) {
-    return <Router location={mockHistory.location} navigator={mockHistory}>
+function getRouter(element: JSX.Element, location: string | Partial<Location>) {
+    return <Router location={location} navigator={mockHistory}>
         {element}
     </Router>;
 }
@@ -65,13 +65,13 @@ function getRouter(element: JSX.Element) {
 export function renderWithRouterAndStore(element: JSX.Element, initialStore: FakeStore): RenderResult {
     return render(
         <Provider store={initialStore}>
-            {getRouter(element)}
+            {getRouter(element, mockHistory.location)}
         </Provider>,
     );
 }
 
-export function renderWithRouter(element: JSX.Element): RenderResult {
+export function renderWithRouter(element: JSX.Element, location: string | Partial<Location> = mockHistory.location): RenderResult {
     return render(
-        getRouter(element)
+        getRouter(element, location)
     );
 }
