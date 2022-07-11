@@ -7,7 +7,7 @@ export interface StoryLinkParams {
 
 export const StoryLink = (props: StoryLinkParams) => {
     return (
-        <NavLink to={`/story/${props.story.storyId}`} title={`storylink${props.story.storyId}`}>
+        <NavLink to={`/story/${props.story.storyId}`} title={`storyLink${props.story.storyId}`}>
             <div>{props.story.title}</div>
             <div>votes: {props.story.numberOfVotes}</div>
             <div>average: {props.story.voteAverage}</div>

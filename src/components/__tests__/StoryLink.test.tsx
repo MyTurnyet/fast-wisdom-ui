@@ -1,13 +1,23 @@
 import React from 'react';
 import { StoryLink } from '../StoryLink';
-import { hasExpectedElementsByText, renderWithRouterAndStore } from '../../configuration/ReactTestToolkit';
+import {
+    expectHistoryCalledWith,
+    hasExpectedElementsByText,
+    pressButtonWithTitle,
+    renderWithRouterAndStore
+} from '../../configuration/ReactTestToolkit';
 import { testStoryNumber1 } from '../../configuration/fixtures/StoryFixtureData';
 import { mockStoreWithOneStory } from '../../configuration/Store';
 
 describe('StoryLink', () => {
-    const view = renderWithRouterAndStore(<StoryLink story={testStoryNumber1}></StoryLink>, mockStoreWithOneStory);
     it('shows title, votes, and average', () => {
+        const view = renderWithRouterAndStore(<StoryLink story={testStoryNumber1}></StoryLink>, mockStoreWithOneStory);
         hasExpectedElementsByText(view, testStoryNumber1.title, `votes: ${testStoryNumber1.numberOfVotes}`,
             `average: ${testStoryNumber1.voteAverage}`);
+    });
+    it('navigates to clicked story', () => {
+        const view = renderWithRouterAndStore(<StoryLink story={testStoryNumber1}></StoryLink>, mockStoreWithOneStory);
+        pressButtonWithTitle(view, `storyLink${testStoryNumber1.storyId}`);
+        expectHistoryCalledWith(`/story/${testStoryNumber1.storyId}`);
     });
 });

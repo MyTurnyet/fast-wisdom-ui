@@ -42,8 +42,19 @@ export function hasExpectedElementsByText(
     elements.forEach((element) => renderResult.getByText(element));
 }
 
-export const mockHistory = createMemoryHistory();
+const mockHistory = createMemoryHistory();
 mockHistory.push = jest.fn();
+
+export function expectHistoryCalledWith(pathname: string) {
+    expect(mockHistory.push).toHaveBeenCalledWith(
+        {
+            hash: '',
+            pathname: pathname,
+            search: '',
+        },
+        undefined,
+    );
+}
 
 function getRouter(element: JSX.Element) {
     return <Router location={mockHistory.location} navigator={mockHistory}>
