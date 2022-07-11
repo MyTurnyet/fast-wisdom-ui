@@ -1,7 +1,10 @@
-import { hasExpectedElementsByText, renderWithRouterAndStore, } from '../../../configuration/ReactTestToolkit';
-import { StoryDisplay } from '../StoryDisplay';
-import { testStoryNumber1 } from '../../../configuration/fixtures/StoryFixtureData';
-import { mockStoreWithOneStory } from '../../../configuration/Store';
+import {
+    renderWithRouterAndStore,
+} from '../../../configuration/ReactTestToolkit';
+import {StoryDisplay} from '../StoryDisplay';
+import {testStoryNumber1} from '../../../configuration/fixtures/StoryFixtureData';
+import {mockStoreWithOneStory} from '../../../configuration/Store';
+import {getByTitle, screen} from "@testing-library/react";
 
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'), // use actual for all non-hook parts
@@ -10,8 +13,24 @@ jest.mock('react-router-dom', () => ({
     }),
 }));
 describe('StoryDisplay', () => {
-    it('has required fields', () => {
-        const view = renderWithRouterAndStore(<StoryDisplay/>, mockStoreWithOneStory);
-        hasExpectedElementsByText(view, testStoryNumber1.title);
+    it('has title of story', () => {
+        renderWithRouterAndStore(<StoryDisplay/>, mockStoreWithOneStory);
+        const title = screen.getByTitle('title');
+        expect(title.textContent).toEqual(testStoryNumber1.title);
+    });
+    it('has description of story', () => {
+        renderWithRouterAndStore(<StoryDisplay/>, mockStoreWithOneStory);
+        const description = screen.getByTitle('description');
+        expect(description.textContent).toEqual(testStoryNumber1.description);
+    });
+    it('has number of Votes of story', () => {
+        renderWithRouterAndStore(<StoryDisplay/>, mockStoreWithOneStory);
+        const voteCount = screen.getByTitle('voteCount');
+        expect(voteCount.textContent).toEqual(testStoryNumber1.numberOfVotes.toString());
+    });
+    it('has average vote of story', () => {
+        renderWithRouterAndStore(<StoryDisplay/>, mockStoreWithOneStory);
+        const voteCount = screen.getByTitle('voteAverage');
+        expect(voteCount.textContent).toEqual(testStoryNumber1.voteAverage.toString());
     });
 });

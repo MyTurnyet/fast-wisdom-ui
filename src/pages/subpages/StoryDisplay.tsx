@@ -15,6 +15,9 @@ export const StoryDisplay = () => {
     const allStories = useAppSelector(state => state.stories.allStories);
     const storyToDisplay = allStories.find(value => value.storyId === params.storyId) ?? emptyStory;
     return (<>
-        <div>{storyToDisplay.title}</div>
+        <div title={'title'}>{storyToDisplay.title}</div>
+        <div title={'description'}>{storyToDisplay.description}</div>
+        <div title={'voteCount'}>{storyToDisplay.numberOfVotes}</div>
+        <div title={'voteAverage'}>{storyToDisplay.voteAverage}</div>
     </>);
 }

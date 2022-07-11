@@ -41,6 +41,12 @@ export function hasExpectedElementsByText(
 ) {
     elements.forEach((element) => renderResult.getByText(element));
 }
+export function hasExpectedElementsByTitle(
+    renderResult: RenderResult,
+    ...elements: string[]
+) {
+    elements.forEach((element) => renderResult.getByTitle(element));
+}
 
 export const mockHistory = createMemoryHistory();
 mockHistory.push = jest.fn();
