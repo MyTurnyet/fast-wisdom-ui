@@ -7,6 +7,6 @@ import { mockInitialStore } from '../configuration/Store';
 describe('App', () => {
     it('should render the app correctly', () => {
         const view: RenderResult = renderWithRouterAndStore(<App/>, mockInitialStore);
-        hasExpectedElementsByText(view, 'Something')
+        hasExpectedElementsByText(view, 'FAST \'Wisdom of the Crowds\'')
     });
 });

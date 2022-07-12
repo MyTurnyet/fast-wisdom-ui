@@ -14,7 +14,7 @@ export const AppLayout = () => {
 
     return <>
         <div className="App HardLine">
-            <div className={'App-header'}>Something</div>
+            <div className={'App-header'}>FAST 'Wisdom of the Crowds'</div>
         </div>
         <div title={'content'} className={'app-layout'} style={{}}>
             <div title={'leftNav'} className={'left-nav'}>
