@@ -15,7 +15,7 @@ export function pressButtonWithText(
 
 export function pressButtonWithTitle(
 	screen: RenderResult,
-	stringToFind: sring,
+	stringToFind: string,
 ) {
 	const button = screen.getByTitle(stringToFind);
 	fireEvent.click(button);
@@ -23,7 +23,7 @@ export function pressButtonWithTitle(
 
 export function textOfElementWithLabel(
 	renderResult: RenderResult,
-	labelText: sring,
+	labelText: string,
 ) {
 	return renderResult.getByLabelText(labelText).innerText;
 }
@@ -83,7 +83,7 @@ export function renderWithRouterAndStore(
 
 export function renderWithRouter(
 	element: JSX.Element,
-	location: string | Partial<Location> = mockHistory.locatin,
+	location: string | Partial<Location> = mockHistory.location,
 ): RenderResult {
 	return render(getRouter(element, location));
 }

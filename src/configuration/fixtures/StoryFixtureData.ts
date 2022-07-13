@@ -1,4 +1,4 @@
-import { StoryInformation } from "../../services/StoryDataService";
+import { StoryInformation } from '../../services/StoryDataService';
 
 export const testStoryNumber1: StoryInformation = {
 	storyId: 'testId1',
@@ -18,5 +18,5 @@ export const testStoryNumber2: StoryInformation = {
 };
 export const testStoryInformationArray: StoryInformation[] = [
 	testStoryNumber1,
-	testStoryNumber2
+	testStoryNumber2,
 ];
