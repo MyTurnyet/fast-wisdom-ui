@@ -14,7 +14,7 @@ export const testStoryNumber2: StoryInformation = {
 	description:
 		'Change the background color of the site, but only when a user is logged in',
 	numberOfVotes: 5,
-	voteAverage: 15,
+	voteAverage: 152,
 };
 export const testStoryInformationArray: StoryInformation[] = [
 	testStoryNumber1,
