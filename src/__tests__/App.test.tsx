@@ -8,10 +8,10 @@ import { RenderResult } from '@testing-library/react';
 import { mockInitialStore } from '../configuration/Store';
 
 describe('App', () => {
-	it"should render the app correctly"', () => {
+	it('should render the app correctly', () => {
 		const view: RenderResult = renderWithRouterAndStore(
 			<App />,
-			mockInitialStor,
+			mockInitialStore,
 		);
 		hasExpectedElementsByText(view, "FAST 'Wisdom of the Crowds'");
 	});

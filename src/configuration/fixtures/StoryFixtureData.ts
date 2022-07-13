@@ -1,4 +1,4 @@
-import { StoryInformation } from '../../services/StoryDataService';
+import { StoryInformation } from "../../services/StoryDataService";
 
 export const testStoryNumber1: StoryInformation = {
 	storyId: 'testId1',
@@ -9,10 +9,10 @@ export const testStoryNumber1: StoryInformation = {
 	voteAverage: 10,
 };
 export const testStoryNumber2: StoryInformation = {
-	storyId:"testId2"',
-	title:"Title of Story 2"',
+	storyId: 'testId2',
+	title: 'Title of Story 2',
 	description:
-	"Change the background color of the site, but only when a user is logged in"',
+		'Change the background color of the site, but only when a user is logged in',
 	numberOfVotes: 5,
 	voteAverage: 15,
 };
