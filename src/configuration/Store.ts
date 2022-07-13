@@ -9,7 +9,7 @@ import { testStoryNumber1 } from './fixtures/StoryFixtureData';
 
 export type FakeStore = MockStoreEnhanced<RootState, AppDispatch>;
 const mockStore: MockStoreCreator<RootState, FakeStore> = createMockStore([
-	thun,
+	thunk,
 ]);
 
 export const mockInitialStore: FakeStore = mockStore(initialRootState);
