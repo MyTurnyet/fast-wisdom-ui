@@ -4,27 +4,35 @@ import { useAppDispatch, useAppSelector } from '../state-management/hooks';
 import { StoryInformation } from '../services/StoryDataService';
 import { getAllStories } from '../state-management/thunks/getAllStories';
 import { StoryLink } from '../components/StoryLink';
+import { NavBar } from '../components/NavBar';
 
 export const AppLayout = () => {
-    const dispatch = useAppDispatch();
-    const storiesArray: StoryInformation[] = useAppSelector(state => state.stories.allStories);
-    useEffect(() => {
-        dispatch(getAllStories());
-    }, [storiesArray])
+	const dispatch = useAppDispatch();
+	const storiesArray: StoryInformation[] = useAppSelector(
+		(state) => state.stories.allStories,
+	);
+	useEffect(() => {
+		dispatch(getAllStories());
+	}, [storiesArray]);
 
-    return <>
-        <div className="App HardLine">
-            <div className={'App-header'}>FAST 'Wisdom of the Crowds'</div>
-        </div>
-        <div title={'content'} className={'app-layout'} style={{}}>
-            <div title={'leftNav'} className={'left-nav'}>
-                {storiesArray.map((value, index) => {
-                    return (<StoryLink story={value} key={index}></StoryLink>)
-                })}
-            </div>
-            <div title={'pageView'} className={'page-view'}>
-                <Outlet></Outlet>
-            </div>
-        </div>
-    </>;
+	return (
+		<>
+			<div className="App HardLine">
+				<div className={'App-header'}>
+					FAST &apos;Wisdom of the Crowds&apos;
+				</div>
+				<NavBar></NavBar>
+			</div>
+			<div title={'content'} className={'app-layout'} style={{}}>
+				<div title={'leftNav'} className={'left-nav'}>
+					{storiesArray.map((value, index) => {
+						return <StoryLink story={value} key={index}></StoryLink>;
+					})}
+				</div>
+				<div title={'pageView'} className={'page-view'}>
+					<Outlet></Outlet>
+				</div>
+			</div>
+		</>
+	);
 };
