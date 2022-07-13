@@ -9,12 +9,11 @@ function App() {
 	return (
 		<Routes>
 			<Route path="/" element={<AppLayout />}>
-				<Route index={true} element={<Navigate to={'/home'} />} />
-				<Route path="/home" element={<MainPage />} />
+				<Route index={true} element={<MainPage />} />
+				<Route path="/home" element={<Navigate to={'/'} />} />
 				<Route path="/story" element={<StoryDisplay />}>
 					<Route path=":storyId" element={<StoryDisplay />} />
 				</Route>
-				{/*<Route path="car-types" element={<CarTypesPage />} />*/}
 
 				<Route
 					path="*"
