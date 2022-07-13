@@ -19,7 +19,7 @@ describe("StoryLink", () => {
 			view,
 			testStoryNumber1.title,
 			`votes: ${testStoryNumber1.numberOfVotes}`,
-			`average: ${testStoryNumber1.voteAverage}`,
+			`average: ${testStoryNumber1.voteAverage}`
 		);
 	});
 	it("navigates to clicked story", () => {
