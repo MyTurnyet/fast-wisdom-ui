@@ -1,11 +1,12 @@
+
 .App {
   text-align: center;
   height: 12vh;
   justify-content: center;
 
-&.HardLine {
-   border-bottom: black 2px solid;
- }
+  &.HardLine {
+    border-bottom: black 2px solid;
+  }
 }
 
 .app-layout {
@@ -13,14 +14,14 @@
   height: 86vh;
   flex-direction: row;
 
-.left-nav {
-  flex: 1;
-  padding: 4px;
-}
+  .left-nav {
+    flex: 1;
+    padding: 4px;
+  }
 
-.page-view {
-  flex: 5;
-}
+  .page-view {
+    flex: 5;
+  }
 }
 
 .App-header {

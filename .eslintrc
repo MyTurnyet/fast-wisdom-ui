@@ -9,7 +9,7 @@
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:jest/recommended",
+//    "plugin:jest/recommended",
     "plugin:jest/style",
     "plugin:prettier/recommended"
   ],
@@ -29,7 +29,7 @@
   ],
   "rules": {
     "@typescript-eslint/no-unused-vars": [
-      "warn"
+      "off"
     ],
     "@typescript-eslint/no-empty-function": [
       "warn"

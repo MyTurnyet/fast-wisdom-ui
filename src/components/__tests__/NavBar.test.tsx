@@ -12,7 +12,7 @@ import { mockInitialStore } from '../../configuration/Store';
 describe('NavBar', () => {
 	let renderAPI: RenderResult;
 	beforeEach(() => {
-		renderAPI = renderWithRouterAndStore(<NavBar/>, mockInitialStore);
+		renderAPI = renderWithRouterAndStore(<NavBar />, mockInitialStore);
 	});
 
 	function clickLink(linkName: string) {
